@@ -23,7 +23,6 @@ export const StackNavigator = () => {
         cardStyle: {
           backgroundColor: 'white'
         },
-        
       }}
     >
         <Stack.Screen name='Pagina1Screen' options={{ title:'Pagina 1' }} component={Pagina1Screen}/>

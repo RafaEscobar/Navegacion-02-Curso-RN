@@ -1,8 +1,8 @@
 import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScrollView } from '@react-navigation/drawer';
-import { StackNavigator } from './StackNavigator';
 import { SettingsPage } from '../pages/SettingsPage';
-import { Image, Text, useWindowDimensions, View } from 'react-native';
+import { useWindowDimensions } from 'react-native';
 import { CustomDrawer } from './CustomDrawer';
+import { BottomTabNavigator } from './BottomTabNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -19,8 +19,8 @@ export const DrawerNavigator = () => {
       screenOptions={{ headerShown: false, drawerType: openDra()  }}
       drawerContent= { (props) => <CustomDrawer {...props} /> }
     >
-      <Drawer.Screen name="StackNavigator" component={StackNavigator} />
-      <Drawer.Screen name="SettingsPage"  component={SettingsPage} />
+      <Drawer.Screen name="BottomTabNavigator" component={BottomTabNavigator} />
+      <Drawer.Screen name="SettingsPage" options={{ headerShown: true, title: 'Mis ajustes' }} component={SettingsPage} />
     </Drawer.Navigator>
   );
 }

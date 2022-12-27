@@ -19,7 +19,7 @@ export const CustomDrawer = ({navigation}: DrawerContentComponentProps) => {
             <TouchableOpacity 
                 style={styles.touchable_route_dra}
 
-                onPress={() => navigation.navigate('StackNavigator')}
+                onPress={() => navigation.navigate('BottomTabNavigator')}
             >
                 <Text style={styles.txt_route_dra}>Navegación de Stack</Text>
             </TouchableOpacity>
