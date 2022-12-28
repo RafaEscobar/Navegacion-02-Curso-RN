@@ -1,5 +1,19 @@
 import { StyleSheet } from 'react-native';
 
+export const paletColor = {
+    primary: '#495579',
+    secondary: '#263159',
+    tertiary: '#251749',
+    // quaternary: '#',
+    neutral: '#FFFFFF',
+}
+
+export const tabColor = {
+    primary: '#FFCACA',
+    secondary: '#372948',
+    tertiary: '#251B37',
+}
+
 export const styles = StyleSheet.create({
     // Margen en todas direcciones para todas las Screens
     marginGlobal: {
