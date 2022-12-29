@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 
+//? Generamos nuestra paleta de colores base
 export const paletColor = {
     primary: '#495579',
     secondary: '#263159',
@@ -7,7 +8,7 @@ export const paletColor = {
     // quaternary: '#',
     neutral: '#FFFFFF',
 }
-
+//? Generamos nuestra paleta de colores para las navegaciones... 
 export const tabColor = {
     primary: '#FFCACA',
     secondary: '#372948',

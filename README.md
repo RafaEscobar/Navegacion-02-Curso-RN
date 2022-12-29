@@ -9,3 +9,8 @@ Repositorio para la practica del curso concerniente a la navegación de Tabs e i
 -> Pagina2TabScreen (7)
 -> DrawerNavigator (8)
 -> CustomDrawer (9)
+-> TopTabNavigator (10-12)
+-> Pagina1TopScreen (13)
+-> Pagina2TopScreen (14)
+-> Pagina3TopScreen (15)
+-> BottomTabNavigator (16)

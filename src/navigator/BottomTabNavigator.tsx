@@ -54,6 +54,7 @@ export const BottomTabNavigator = () => {
     >
       {/* //! 4) Generamos las Tab.Screen's en base al numero de Screens que queramos en el Tab */}
       <Tab.Screen name='Pagina1TabScreen' component={Pagina1TabScreen}/>
+      {/* //! 16) Llamamos al TopTaoNavigator en esta Tab.Screen */}
       <Tab.Screen name='TopTap' component={TopTabNavigator}/>
       {/* //! 5) En esta Screen llamamos al StackNavigator como si fuera una Screen sola, para poder acceder a esa navegacion */}
       {/* //* Quitamos de esta Screen el header del BottomTab para que no se duplique con el del Stack */}
