@@ -3,8 +3,9 @@ Repositorio para la practica del curso concerniente a la navegación de Tabs e i
 
 ### Secuencia de pasos ###
 
--> BottomTabNavigator (1-4)
--> Pagina1TabScreen (5)
--> Pagina2TabScreen (6)
--> DrawerNavigator (7)
--> CustomDrawer (8)
+-> App.tsx (0)
+-> BottomTabNavigator (1-5)
+-> Pagina1TabScreen (6)
+-> Pagina2TabScreen (7)
+-> DrawerNavigator (8)
+-> CustomDrawer (9)

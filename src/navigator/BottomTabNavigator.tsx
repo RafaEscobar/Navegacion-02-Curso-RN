@@ -1,37 +1,62 @@
 import React from 'react'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+//? Screens
 import { Pagina1TabScreen } from '../screens/Pagina1TabScreen';
 import { Pagina2TabScreen } from '../screens/Pagina2TabScreen';
 import { StackNavigator } from './StackNavigator';
-import { tabColor, paletColor } from '../theme/appTheme';
+//? appTheme
+import { paletColor } from '../theme/appTheme';
+//? Componentes
+import { Text } from 'react-native';
+//? hooks y creates
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
-//! 1) Generamos la constante TAB que apunta al -createBottomTabNavigator- para poder generar el BottomTab
-const Tab = createBottomTabNavigator();
+//! 1) Generamos la constante TAB que apunta al -createMaterialBottomTabNavigator- para poder generar el BottomTab
+const Tab = createMaterialBottomTabNavigator();
+
 //* Generamos el arrowFunction
 export const BottomTabNavigator = () => {
   return (
     //! 2) Abrimos el -Tab.Navigator-
     <Tab.Navigator
-    sceneContainerStyle={{
-      backgroundColor: paletColor.neutral
-    }}
-      screenOptions={{
-        tabBarActiveTintColor: tabColor.tertiary,
-        tabBarInactiveTintColor: tabColor.primary,
-        tabBarLabelStyle:{ fontSize: 12 },
+    //* Esta propiedad otorga una animacion de transicion sueva al darl clic en los Tabs
+    sceneAnimationEnabled={true}
+    //* Color de fondo de la caja del Tabs
+    barStyle={{backgroundColor: paletColor.neutral}}
+    //* Color activo e inactivo
+    activeColor='blue'
+    inactiveColor='gray'
+    //! 3) ###### 
+      screenOptions={
+        ({route}) => ({
+                
+        tabBarIcon: ({ color, focused }) => {
+          
+          let my_icon;
+
+          switch(route.name){
+            case 'Pagina1TabScreen': 
+              my_icon = 'P1';
+            break;
+            case 'Pagina2TabScreen': 
+              my_icon = 'P2';
+            break;
+            case 'StackNavigator':
+              my_icon = 'St';
+            break;
+          }
+          
+          return <Text style={{color}}>{my_icon}</Text>
+        }
         
-        tabBarStyle:{ borderTopWidth: 0 , elevation: 0 },
-        // tabBarShowLabel: false,
-        
-      }}
+      })}
       
     >
-      {/* //! 3) Generamos las Tab.Screen's en base al numero de Screens que queramos en el Tab */}
-      <Tab.Screen name='Pagina1TabScreen' options={{ title: 'Pagina 1' }} component={Pagina1TabScreen}/>
-      <Tab.Screen name='Pagina2TabScreen' options={{ title: 'Pagina 2' }} component={Pagina2TabScreen}/>
-      {/* //! 4) En esta Screen llamamos al StackNavigator como si fuera una Screen sola, para poder acceder a esa navegacion */}
+      {/* //! 4) Generamos las Tab.Screen's en base al numero de Screens que queramos en el Tab */}
+      <Tab.Screen name='Pagina1TabScreen' component={Pagina1TabScreen}/>
+      <Tab.Screen name='Pagina2TabScreen' component={Pagina2TabScreen}/>
+      {/* //! 5) En esta Screen llamamos al StackNavigator como si fuera una Screen sola, para poder acceder a esa navegacion */}
       {/* //* Quitamos de esta Screen el header del BottomTab para que no se duplique con el del Stack */}
-      <Tab.Screen name='StackNavigator' options={{ headerShown:false, title: 'Stack' }} component={StackNavigator}/>
+      <Tab.Screen name='StackNavigator' options={{ title: 'Stack' }} component={StackNavigator}/>
     </Tab.Navigator>
   )
 }

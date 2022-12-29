@@ -18,7 +18,7 @@ export const CustomDrawer = ({navigation}: DrawerContentComponentProps) => {
           <View style={styles.draContainer}>
             <TouchableOpacity 
                 style={styles.touchable_route_dra}
-                //! 8) Llamamos a la Screen del Drawer asociada al BottomTab, recien colocada en el paso 7)
+                //! 9) Llamamos a la Screen del Drawer asociada al BottomTab, recien colocada en el paso 7)
                 onPress={() => navigation.navigate('BottomTabNavigator')}
             >
                 <Text style={styles.txt_route_dra}>Navegación de Stack</Text>
