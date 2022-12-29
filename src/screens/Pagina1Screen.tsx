@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Text, View,TouchableOpacity, useWindowDimensions } from 'react-native'
 import { DrawerScreenProps } from '@react-navigation/drawer'
 import { styles } from '../theme/appTheme'
+import Icon from 'react-native-vector-icons/Ionicons'
 
 interface Props extends DrawerScreenProps<any,any>{};
 
@@ -12,8 +13,8 @@ export const Pagina1Screen = ({navigation}:Props) => {
    useEffect(() => {
     navigation.setOptions({
       headerLeft: () => (
-        <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
-          <Text style={{color:'black'}}>===</Text>
+        <TouchableOpacity onPress={() => navigation.toggleDrawer()} style={{top: 2, left: 6}}>
+          <Icon name='reorder-three-outline' size={40} color='' />
         </TouchableOpacity>
       )
     });
