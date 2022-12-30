@@ -29,14 +29,17 @@ export const BottomTabNavigator = () => {
       activeColor='blue'
       inactiveColor='gray'
           
-      //! 3) ###### 
+      //! 3) Creamos la estructura para insertar el icono
         screenOptions={
+          //? 3.1) Desestructuramos el -route-
           ({route}) => ({
+            //? 3.2) Generamos el insert -tabBarIcon- desestructurando el Icon
             tabBarIcon: ({ color }) => {
-
+              //? 3.3) Generamos una variable para contener el nombre del icono en cuestion, para cada Screen
               let my_icon='';
-            
+              //? 3.4) Creamos un switch que segun el route.name, establece que cada nombre de Screen en las Tab.Screen es un case
               switch(route.name){
+                //? 3.5) Segun el case colocaremos un icono u otro.
                 case 'Pagina1TabScreen': 
                   my_icon = 'document-outline';
                 break;
@@ -47,7 +50,7 @@ export const BottomTabNavigator = () => {
                   my_icon = 'layers-outline';
                 break;
               }
-
+              //? Retornamos el icono con el my_icon como dinamico para cada 'case'
               return <Icon name={my_icon} size={20} color={color} />
             }
       })}

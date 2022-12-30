@@ -16,21 +16,27 @@ export const TopTabNavigator = () => {
     //* Asignamos ciertas propiedades segun lo establezcamos....
       screenOptions={
         ({route}) => ({
-
+        //* Color al presionar la screen
         tabBarPressColor: 'blue',
+        //* Visivilidad para el Icono
         tabBarShowIcon: true,
+        //* Ubicacion -bottom- para el menu de navegacion
         // tabBarPosition: 'bottom',
+        //? Estilos para los labels
         tabBarLabelStyle:{
           fontSize: 12,
           fontWeight: 'bold'
         },
+        //? Estilos para la linea de indicacion de la Screen
         tabBarIndicatorStyle:{
           backgroundColor: 'black'
         },
+        //? Estilos para el menu como caja
         tabBarStyle: {
           borderBottomWidth: 0,
           elevation: 0,
         },
+        //? Generacion de icono
         tabBarIcon: ({ color}) => {
 
           let my_icon='';
@@ -50,6 +56,7 @@ export const TopTabNavigator = () => {
           return <Icon name={my_icon} size={25} color={color} />
         }
       })}
+      //* Color de fondo para las Screens
       sceneContainerStyle={{ backgroundColor: 'white',  }}
     >
       {/* //! 12) Generamos las TTab.Screen's necesarias */}
